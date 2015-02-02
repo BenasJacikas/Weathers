@@ -1,0 +1,7 @@
+c:\users\gintautas\documents\visual studio 2013\Projects\Contract\Contract\bin\Debug\Contract.exe.config
+c:\users\gintautas\documents\visual studio 2013\Projects\Contract\Contract\bin\Debug\Contract.exe
+c:\users\gintautas\documents\visual studio 2013\Projects\Contract\Contract\bin\Debug\Contract.pdb
+c:\users\gintautas\documents\visual studio 2013\Projects\Contract\Contract\obj\Debug\Contract.csprojResolveAssemblyReference.cache
+c:\users\gintautas\documents\visual studio 2013\Projects\Contract\Contract\obj\Debug\Contract.exe
+c:\users\gintautas\documents\visual studio 2013\Projects\Contract\Contract\obj\Debug\Contract.pdb
+C:\Users\Gintautas\Documents\Visual Studio 2013\Projects\Contract\Contract\bin\Debug\Newtonsoft.Json.dll
