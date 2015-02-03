@@ -5,3 +5,12 @@ c:\users\gintautas\documents\visual studio 2013\Projects\Contract\Contract\obj\D
 c:\users\gintautas\documents\visual studio 2013\Projects\Contract\Contract\obj\Debug\Contract.exe
 c:\users\gintautas\documents\visual studio 2013\Projects\Contract\Contract\obj\Debug\Contract.pdb
 C:\Users\Gintautas\Documents\Visual Studio 2013\Projects\Contract\Contract\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\Contract.exe.config
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\Contract.exe
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\Contract.pdb
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\System.Data.SQLite.dll
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\System.Data.SQLite.xml
+C:\Users\Gintautas\Desktop\Weathers\Contract\obj\Debug\Contract.csprojResolveAssemblyReference.cache
+C:\Users\Gintautas\Desktop\Weathers\Contract\obj\Debug\Contract.exe
+C:\Users\Gintautas\Desktop\Weathers\Contract\obj\Debug\Contract.pdb

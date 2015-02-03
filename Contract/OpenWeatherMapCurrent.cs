@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -19,7 +20,11 @@ namespace Contract
             string json;
             using (WebClient wc = new WebClient())
             {
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
                 json = wc.DownloadString(url);
+                stopwatch.Stop();
+                Console.WriteLine(stopwatch.ElapsedMilliseconds + " " + cities);
             }
             RootObjectCurrent weather = JsonConvert.DeserializeObject<RootObjectCurrent>(json);
             return CurrentConverter(weather);
