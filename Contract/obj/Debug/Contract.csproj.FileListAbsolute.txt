@@ -14,3 +14,5 @@ C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\System.Data.SQLite.xml
 C:\Users\Gintautas\Desktop\Weathers\Contract\obj\Debug\Contract.csprojResolveAssemblyReference.cache
 C:\Users\Gintautas\Desktop\Weathers\Contract\obj\Debug\Contract.exe
 C:\Users\Gintautas\Desktop\Weathers\Contract\obj\Debug\Contract.pdb
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\Dapper.dll
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\Newtonsoft.Json.xml

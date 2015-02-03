@@ -4,6 +4,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Contract
 {
@@ -11,9 +12,40 @@ namespace Contract
     {
         static void Main(string[] args)
         {
-            //SQLiteConnection connection = new SQLiteConnection("Data Source=:memory:;Version=3;New=True;");
-            var data2 = GetCurrent("593116");
-            Console.WriteLine(data2[0].CiyId + " " + data2[0].Temperature + " " + data2[0].Weather);
+            SQLiteConnection source = new SQLiteConnection("Data Source = Weather.sqlite");
+            source.Open();
+
+            using (SQLiteConnection destination = new SQLiteConnection("Data Source=:memory:"))
+            {
+                destination.Open();
+
+                // copy db file to memory
+                source.BackupDatabase(destination, "main", "main", -1, null, 0);
+                source.Close();
+
+                //--------------------
+                
+                //WeatherDB.InsertCurrent(destination, );
+                //WeatherDB.SelectAllCurrent(destination);
+                //WeatherDB.GetCurrentWeather(destination, 2988507);
+                //WeatherDB.InsertCity(destination, 524901);
+                //WeatherDB.SelectAllCities(destination);
+                /*var list = GetCurrent("2988507");
+                foreach (var item in list)
+                {
+                    string weatherjson = JsonConvert.SerializeObject(item);
+                    WeatherDB.InsertCurrent(destination, item.CiyId, weatherjson);
+                }*/
+
+                WeatherDB.CreateDatabase();
+
+                //--------------------
+                // save memory db to file
+                source = new SQLiteConnection("Data Source= Weather.sqlite");
+                source.Open();
+                destination.BackupDatabase(source, "main", "main", -1, null, 0);
+                source.Close();
+            }
             Console.Read();
         }
 
