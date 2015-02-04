@@ -16,3 +16,10 @@ C:\Users\Gintautas\Desktop\Weathers\Contract\obj\Debug\Contract.exe
 C:\Users\Gintautas\Desktop\Weathers\Contract\obj\Debug\Contract.pdb
 C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\Dapper.dll
 C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\FluentNHibernate.dll
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\Iesi.Collections.dll
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\NHibernate.dll
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\FluentNHibernate.pdb
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\FluentNHibernate.xml
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\Iesi.Collections.xml
+C:\Users\Gintautas\Desktop\Weathers\Contract\bin\Debug\NHibernate.xml

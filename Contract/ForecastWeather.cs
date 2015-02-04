@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Contract
 {
 
-    public class Forecast
+    public class ForecastWeather
     {
         public string Cod { get; set; }
         public float Message { get; set; }

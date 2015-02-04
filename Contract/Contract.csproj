@@ -35,9 +35,18 @@
     <Reference Include="Dapper">
       <HintPath>..\packages\Dapper.1.0\lib\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.2.0.1.0\lib\net40\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\packages\NHibernate.4.0.3.4000\lib\net40\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,8 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Cities.cs" />
+    <Compile Include="Entities\Current.cs" />
+    <Compile Include="Entities\Forecast.cs" />
+    <Compile Include="Mapping\CitiesMap.cs" />
+    <Compile Include="Mapping\CurrentMap.cs" />
+    <Compile Include="Mapping\ForecastMap.cs" />
     <Compile Include="WeatherDB.cs" />
-    <Compile Include="Forecast.cs" />
+    <Compile Include="ForecastWeather.cs" />
     <Compile Include="Logs.cs" />
     <Compile Include="OpenWeatherMapCurrent.cs" />
     <Compile Include="OpenWeatherMapForecast.cs" />
@@ -68,6 +83,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.94.0\build\net45\System.Data.SQLite.Core.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

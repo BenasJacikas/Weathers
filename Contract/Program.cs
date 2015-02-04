@@ -4,7 +4,12 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Contract.Entities;
+using Contract.Mapping;
+using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
 using Newtonsoft.Json;
+using NHibernate;
 
 namespace Contract
 {
@@ -12,10 +17,43 @@ namespace Contract
     {
         static void Main(string[] args)
         {
-            SQLiteConnection source = new SQLiteConnection("Data Source = Weather.sqlite");
+            var sessionFactory = CreateSessionFactory();
+            using (var session = sessionFactory.OpenSession())
+            {
+                using (session.BeginTransaction())
+                {
+                    var cities = session.CreateCriteria(typeof (Cities)).List<Cities>();
+                    foreach (var city in cities)
+                    {
+                        Console.WriteLine(city.Id);
+                    }
+                }
+            }
+            Console.Read();
+        }
+
+
+
+        private static ISessionFactory CreateSessionFactory()
+        {
+            return Fluently.Configure().
+                Database(SQLiteConfiguration.Standard.UsingFile("Weather.sqlite")).
+                Mappings(m => m.FluentMappings.AddFromAssemblyOf<CitiesMap>()).
+                BuildSessionFactory();
+        } 
+
+        /*static List<CurrentWeather> GetCurrent(string cityData)
+        {
+            return (List<CurrentWeather>) Retry.DoFirstLevel(() => OpenWeatherMapCurrent.GetCurrentWeatherJson(cityData), TimeSpan.FromSeconds(1), cityData);
+        }*/
+    }
+}
+/*
+            SQLiteConnection source = new SQLiteConnection("Data Source= Weather.sqlite");
             source.Open();
 
-            using (SQLiteConnection destination = new SQLiteConnection("Data Source=:memory:"))
+            using (SQLiteConnection destination = new SQLiteConnection(
+              "Data Source=:memory:"))
             {
                 destination.Open();
 
@@ -23,40 +61,15 @@ namespace Contract
                 source.BackupDatabase(destination, "main", "main", -1, null, 0);
                 source.Close();
 
-                //--------------------
-                
-                //WeatherDB.InsertCurrent(destination, );
-                //WeatherDB.SelectAllCurrent(destination);
-                //WeatherDB.GetCurrentWeather(destination, 2988507);
-                //WeatherDB.InsertCity(destination, 524901);
-                //WeatherDB.SelectAllCities(destination);
-                /*var list = GetCurrent("2988507");
-                foreach (var item in list)
-                {
-                    string weatherjson = JsonConvert.SerializeObject(item);
-                    WeatherDB.InsertCurrent(destination, item.CiyId, weatherjson);
-                }*/
+                // insert, select ,...        
+                WeatherDB.SelectAllCities(destination);
 
-                WeatherDB.CreateDatabase();
 
-                //--------------------
-                // save memory db to file
                 source = new SQLiteConnection("Data Source= Weather.sqlite");
                 source.Open();
+
+                // save memory db to file
                 destination.BackupDatabase(source, "main", "main", -1, null, 0);
                 source.Close();
             }
-            Console.Read();
-        }
-
-        static object GetForecast(object cityData)
-        {
-            return null;
-        }
-
-        static List<CurrentWeather> GetCurrent(string cityData)
-        {
-            return (List<CurrentWeather>) Retry.DoFirstLevel(() => OpenWeatherMapCurrent.GetCurrentWeatherJson(cityData), TimeSpan.FromSeconds(1), cityData);
-        }
-    }
-}
+*/

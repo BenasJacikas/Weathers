@@ -25,7 +25,7 @@ namespace Contract
             command1.ExecuteNonQuery();
 
             string sql2 = "CREATE TABLE current (" +
-                          "id INTEGER UNIQUE, " +
+                          "id INTEGER NOT NULL UNIQUE, " +
                           "lastupdate DATETIME, " +
                           "weatherjson TEXT," +
                           "FOREIGN KEY(id) REFERENCES cities(id) ON DELETE CASCADE)";
@@ -33,7 +33,7 @@ namespace Contract
             command2.ExecuteNonQuery();
 
             string sql3 = "CREATE TABLE forecast (" +
-                          "id INTEGER UNIQUE, " +
+                          "id INTEGER NOT NULL UNIQUE, " +
                           "lastupdate DATETIME, " +
                           "weatherjson TEXT," +
                           "FOREIGN KEY(id) REFERENCES cities(id) ON DELETE CASCADE)";
